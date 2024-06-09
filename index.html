@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- https://unsplash.com/@babyhero, author of the backround image. -->
+  <div class="left half">
+    <img src="steve-le-ug1Fj8zPntI-unsplash.jpg" alt="background-image">
+    <div class="logo">Odin Vietnam</div>
+    <div class="background-image-source">background image from unsplash by babyhero</div>
+  </div>
+  <div class="right half">
+    <p>signup for my newsletter</p>
+    <form action="">
+      <p>name, email, and phone number 😉</p>
+      <div>
+        <div>
+          <label for="fname">first name</label>
+          <input type="text" id="fname" name="name" required>
+        </div>
+        <div>
+          <label for="lname">last name</label>
+          <input type="text" id="lname" name="name" required>
+        </div>
+      </div>
+      <div>
+        <div>
+          <label for="email">email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="phone">phone number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+      </div>
+      <div>
+        <div>
+          <label for="password">password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+          <label for="confirmed-password">confirm password</label>
+          <input type="password" id="confirmed-password" name="password" required>
+        </div>
+      </div>
+    </form>
+    <div class="submit">
+      <button type="submit">create account</button>
+      <p>already have an account? <a href="http://">login</a></p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('password').addEventListener('input', function(event) {
+      window.password = event.target.value;
+    });
+
+    document.getElementById('confirmed-password').addEventListener('input', function(event) {
+      window.confirmedPassword = event.target.value;
+      if (window.password !== window.confirmedPassword) {
+        document.getElementById('password').style.borderColor = 'red';
+        document.getElementById('confirmed-password').style.borderColor = 'red';
+      } else {
+        document.getElementById('password').style.borderColor = '';
+        document.getElementById('confirmed-password').style.borderColor = '';
+      }
+    });
+  </script>
+</body>
+</html>
